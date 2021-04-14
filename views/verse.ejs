@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quran Verse</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+
+        .text {
+            text-align: right;
+            line-height: 200%;
+            font-family: 'Amiri', serif;
+        }
+    </style>
+</head>
+
+<body style="padding: 5px;background-color: #dbcebe;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+    border-top: 10px solid black;">
+    <div class="text">
+        <h1 style="color :black; text-align: center"><strong>القرآن الكريم</strong></h1>
+        <% verses.verses.forEach(function(verse) { %>
+        <span style="margin-left:5px;">
+
+            <% if (verse.text_uthmani.includes("بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيم")) { %>
+            <ul style="color :red; text-align: center;margin-top: 20px;"><strong><%= verse.text_uthmani %></strong></ul>
+            <%} else { %>
+            <strong><%= verse.text_uthmani %> * </strong>
+            <% } %>
+
+        </span>
+        <% }); %>
+    </div>
+</body>
+
+</html>
